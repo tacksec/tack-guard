@@ -1,0 +1,100 @@
+{
+  "results": [
+    {
+      "benchmark": "internal-corpus",
+      "benchmark_version": "v1",
+      "tackguard_version": "0.2.0",
+      "mapper_version": "explicit",
+      "model": null,
+      "mode": "enforce",
+      "detection": {
+        "recall": 0.885,
+        "precision": 1,
+        "f1": 0.939,
+        "by_category": {
+          "creep": 1,
+          "exfil": 1,
+          "smash": 1,
+          "burst": 1,
+          "hard": 0
+        }
+      },
+      "false_pos": {
+        "fpr": 0,
+        "benign_utility": 1,
+        "no_defense_baseline": 1
+      },
+      "separation": {
+        "auc": 0.951
+      },
+      "layer_split": null,
+      "n_cases": {
+        "attack": 26,
+        "benign": 19
+      },
+      "date": "2026-06-18T00:54:55.800Z"
+    },
+    {
+      "benchmark": "injecagent · default",
+      "benchmark_version": "base",
+      "tackguard_version": "0.2.0",
+      "mapper_version": "inferToolCall (defaults)",
+      "model": null,
+      "mode": "enforce",
+      "detection": {
+        "recall": 0,
+        "precision": 0,
+        "f1": 0,
+        "by_category": {
+          "dh": 0,
+          "ds": 0
+        }
+      },
+      "false_pos": {
+        "fpr": 0,
+        "benign_utility": 1,
+        "no_defense_baseline": 1
+      },
+      "separation": {
+        "auc": 0.5
+      },
+      "layer_split": null,
+      "n_cases": {
+        "attack": 1054,
+        "benign": 17
+      },
+      "date": "2026-06-18T00:54:55.811Z"
+    },
+    {
+      "benchmark": "injecagent · tuned",
+      "benchmark_version": "base",
+      "tackguard_version": "0.2.0",
+      "mapper_version": "inferToolCall + domain-sensitivity + seeded read baseline",
+      "model": null,
+      "mode": "enforce",
+      "detection": {
+        "recall": 0.046,
+        "precision": 1,
+        "f1": 0.088,
+        "by_category": {
+          "dh": 0.094,
+          "ds": 0
+        }
+      },
+      "false_pos": {
+        "fpr": 0,
+        "benign_utility": 1,
+        "no_defense_baseline": 1
+      },
+      "separation": {
+        "auc": 0.732
+      },
+      "layer_split": null,
+      "n_cases": {
+        "attack": 1054,
+        "benign": 17
+      },
+      "date": "2026-06-18T00:54:55.850Z"
+    }
+  ]
+}

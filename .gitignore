@@ -1,0 +1,22 @@
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Secrets — never commit API keys
+.env
+.env.local
+.env.*.local
+
+# AgentDojo run artifacts (per-task JSON logs)
+eval/agentdojo/runs/
+# Python venv if created in-repo
+.venv/
+# Python bytecode caches (eval/agentdojo)
+__pycache__/
+*.pyc
+
+# Local-only dev tooling and notes — kept on disk, not published.
+CLAUDE.md
+MEMORY.md
+.claude/
+private/

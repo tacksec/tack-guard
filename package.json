@@ -1,0 +1,99 @@
+{
+  "name": "@tacksec/guard",
+  "version": "0.2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Runtime risk scoring for AI agent tool calls. Detect privilege escalation, baseline deviations, and data exfiltration inline — under 1ms, zero dependencies, no LLM.",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./mcp": {
+      "import": {
+        "types": "./dist/mcp.d.ts",
+        "default": "./dist/mcp.js"
+      },
+      "require": {
+        "types": "./dist/mcp.d.cts",
+        "default": "./dist/mcp.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "mcp": [
+        "./dist/mcp.d.ts"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@modelcontextprotocol/sdk": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@modelcontextprotocol/sdk": {
+      "optional": true
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit && tsc -p tsconfig.test.json",
+    "eval": "npm run build && node eval/run.mjs",
+    "benchmarks": "npm run build && node eval/benchmarks.mjs",
+    "latency": "npm run build && node eval/latency.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "security",
+    "runtime",
+    "guard",
+    "risk",
+    "scoring",
+    "tool-call",
+    "middleware",
+    "behavioral",
+    "drift",
+    "detection"
+  ],
+  "author": "Damien Aubry <damien@tacksec.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tacksec/tack-guard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tacksec/tack-guard/issues"
+  },
+  "homepage": "https://tacksec.com",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

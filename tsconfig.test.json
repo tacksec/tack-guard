@@ -1,0 +1,13 @@
+{
+  "//": "Typecheck-only config for the test suite. The main tsconfig.json keeps rootDir=src for the package; this one widens it so `tsc` catches bugs in test files too (e.g. asserting on fields that don't exist on the public types). Run via `npm run lint`.",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "noEmit": true,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
